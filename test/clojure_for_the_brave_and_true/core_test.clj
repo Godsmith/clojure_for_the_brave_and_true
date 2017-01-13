@@ -24,3 +24,6 @@
                           (is (= (dec9 10) 1))
                           )
                         )
+(deftest mapset-test
+  (testing "mapset-test"
+    (is (= (mapset inc [1 1 2 2]) #{2 3}))))
