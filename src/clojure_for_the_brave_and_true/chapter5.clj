@@ -31,3 +31,10 @@
   )
 ; 4. Look up and use the update-in function.
 ; 5. Implement update-in .
+(defn my-update-in
+  ""
+  ([m [k & ks] f & args]
+   (if ks
+     (let [new-value (apply my-update-in (get m k) ks f args)]
+       (assoc m k new-value))
+     (apply update m k f args))))
